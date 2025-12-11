@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "header": "linkz.io/alpha123",
+    "type": "walla.co.il/summer-sale",
+    "status": "Live",
+    "target": "12,430 clicks",
+    "limit": "74% native",
+    "reviewer": "Instagram"
+  },
+  {
+    "id": 2,
+    "header": "linkz.io/launch",
+    "type": "levelz.ai/launch",
+    "status": "Live",
+    "target": "8,912 clicks",
+    "limit": "69% native",
+    "reviewer": "TikTok"
+  },
+  {
+    "id": 3,
+    "header": "linkz.io/podcast",
+    "type": "spotify.com/show/123",
+    "status": "Paused",
+    "target": "1,230 clicks",
+    "limit": "55% native",
+    "reviewer": "Facebook"
+  },
+  {
+    "id": 4,
+    "header": "linkz.io/demo",
+    "type": "demo.linkz.io/onboarding",
+    "status": "Live",
+    "target": "3,420 clicks",
+    "limit": "82% native",
+    "reviewer": "Direct"
+  },
+  {
+    "id": 5,
+    "header": "linkz.io/qr-stand",
+    "type": "menu.coffee.io",
+    "status": "Live",
+    "target": "2,118 clicks",
+    "limit": "90% native",
+    "reviewer": "QR"
+  },
+  {
+    "id": 6,
+    "header": "linkz.io/landing",
+    "type": "landing.levelz.ai",
+    "status": "Draft",
+    "target": "310 clicks",
+    "limit": "64% native",
+    "reviewer": "Instagram"
+  },
+  {
+    "id": 7,
+    "header": "linkz.io/campaignA",
+    "type": "notion.so/linkz",
+    "status": "Live",
+    "target": "6,742 clicks",
+    "limit": "71% native",
+    "reviewer": "WhatsApp"
+  },
+  {
+    "id": 8,
+    "header": "linkz.io/app",
+    "type": "apps.apple.com/linkz",
+    "status": "Live",
+    "target": "9,840 clicks",
+    "limit": "78% native",
+    "reviewer": "iOS"
+  },
+  {
+    "id": 9,
+    "header": "linkz.io/android",
+    "type": "play.google.com/linkz",
+    "status": "Live",
+    "target": "7,410 clicks",
+    "limit": "73% native",
+    "reviewer": "Android"
+  },
+  {
+    "id": 10,
+    "header": "linkz.io/partners",
+    "type": "partners.levelz.ai",
+    "status": "Live",
+    "target": "1,980 clicks",
+    "limit": "68% native",
+    "reviewer": "Email"
+  }
+]

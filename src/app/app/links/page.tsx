@@ -118,28 +118,6 @@ export default function LinksPage() {
     }
   };
 
-  if (authLoading) {
-    return (
-      <div className="p-6">
-        <p className="text-sm text-foreground/70">טוען פרטי משתמש...</p>
-      </div>
-    );
-  }
-
-  if (authError || !user) {
-    return (
-      <div className="p-6 space-y-4">
-        <h1 className="text-2xl font-semibold">Links</h1>
-        <p className="text-foreground/70">
-          צריך להתחבר כדי לנהל קישורים.
-        </p>
-        <Button asChild>
-          <Link href="/lauth">התחברות</Link>
-        </Button>
-      </div>
-    );
-  }
-
   return (
     <div className="p-4 md:p-6 space-y-6">
       <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">

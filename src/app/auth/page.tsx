@@ -111,7 +111,7 @@ export default function AuthPage() {
         splitHeader={false}
         isDotSeperator={true}
         title="כניסה לאיזור האישי"
-        HeaderIcon={<IconLock />}
+        HeaderIcon={<IconLock className="size-5 text-secondary" />}
       >
         <div className="col-span-2">
           {/* // <div className="relative min-h-screen overflow-hidden bg-grid-pattern px-6 py-24"> */}

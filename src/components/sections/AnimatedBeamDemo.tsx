@@ -584,7 +584,7 @@ function TypewriterEffectDemo() {
     },
     {
       text: "חינם.",
-      className: "text-teal-500 dark:text-blue-500",
+      className: "text-teal-500 dark:text-teal-500",
     },
   ];
   return (

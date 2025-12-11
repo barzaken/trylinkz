@@ -35,8 +35,8 @@ export function PointerHighlightDemo() {
           </div>
           <div className="mx-auto mt-4 max-w-lg text-base font-bold tracking-tight md:text-base">
             <PointerHighlight
-              rectangleClassName="bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700 leading-loose"
-              pointerClassName="text-blue-500 h-3 w-3"
+              rectangleClassName="bg-teal-100 dark:bg-teal-900 border-teal-300 dark:border-teal-700 leading-loose"
+              pointerClassName="text-teal-500 h-3 w-3"
               containerClassName="inline-block mx-1"
             >
               <span className="relative z-10 px-1">02</span>

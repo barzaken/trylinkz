@@ -3,6 +3,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { useRouter } from "next/navigation";
 import { AuthProvider, useAuth } from "@/components/providers/AuthProvider";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
@@ -13,50 +14,64 @@ import { createLink, type LinkRecord } from "@/lib/links";
 import { Confetti, type ConfettiRef } from "@/components/ui/confetti";
 
 export default function AppLayout({ children }: { children: ReactNode }) {
+  return (
+    <AuthProvider>
+      <InnerAppLayout>{children}</InnerAppLayout>
+    </AuthProvider>
+  );
+}
+
+function InnerAppLayout({ children }: { children: ReactNode }) {
+  const { user, loading } = useAuth();
+  const router = useRouter();
   const [quickOpen, setQuickOpen] = useState(false);
   const [shortBase, setShortBase] = useState("");
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (
-        event.key === "k" &&
-        (event.metaKey || event.ctrlKey)
-      ) {
-        event.preventDefault()
-        setQuickOpen(true)
+      if (event.key === "k" && (event.metaKey || event.ctrlKey)) {
+        event.preventDefault();
+        setQuickOpen(true);
       }
-    }
+    };
 
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [])
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       setShortBase(`${window.location.origin}/`);
     }
   }, []);
 
+  useEffect(() => {
+    if (loading) return;
+    if (!user) {
+      router.replace("/auth");
+    }
+  }, [loading, user, router]);
+
   return (
-    <AuthProvider>
-      <SidebarProvider
-        style={
-          {
-            "--sidebar-width": "calc(var(--spacing) * 72)",
-            "--header-height": "calc(var(--spacing) * 12)",
-          } as CSSProperties
-        }
-      >
-        <AppSidebar variant="inset" onQuickCreate={() => setQuickOpen(true)} />
-        <SidebarInset>
-          <SiteHeader />
-          <QuickCreateModal
-            open={quickOpen}
-            onOpenChange={setQuickOpen}
-            shortBase={shortBase}
-          />
-          {children}
-        </SidebarInset>
-      </SidebarProvider>
-    </AuthProvider>
+    <SidebarProvider
+      style={
+        {
+          "--sidebar-width": "calc(var(--spacing) * 72)",
+          "--header-height": "calc(var(--spacing) * 12)",
+        } as CSSProperties
+      }
+    >
+      <AppSidebar variant="inset" onQuickCreate={() => setQuickOpen(true)} />
+      <SidebarInset>
+        <SiteHeader />
+        <QuickCreateModal
+          open={quickOpen}
+          onOpenChange={setQuickOpen}
+          shortBase={shortBase}
+        />
+        {children}
+      </SidebarInset>
+    </SidebarProvider>
   );
 }
 

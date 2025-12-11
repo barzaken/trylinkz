@@ -85,7 +85,7 @@ export function AppSidebar({
   }, [user, loading])
 
   return (
-    <Sidebar side="right" collapsible="offcanvas" {...props}>
+    <Sidebar side="right" collapsible="icon" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>

@@ -41,8 +41,7 @@ export function Footer() {
               <Logo width={120} height={80} />
             </Link>
             <p className="text-black/60 dark:text-white/60 leading-relaxed max-w-md">
-              פתרונות תוכנה מתקדמים מהיחידות המובחרות של צה&quot;ל. 
-              אנחנו מביאים את הטכנולוגיה הצבאית המתקדמת ביותר לעולם העסקי.
+              Linkz פותח כל קליק בדפדפן ברירת המחדל ומאיץ את האתר, כך שתראו עוד 30-40% תוצאות. הכל בחינם וללא שינוי במבנה הקמפיינים שלכם.
             </p>
             <div className="flex gap-4 mt-6">
               <motion.a
@@ -68,7 +67,7 @@ export function Footer() {
                 </svg>
               </motion.a>
               <motion.a
-                href="mailto:contact@levelz.co.il"
+                href="mailto:contact@trylinkz.io"
                 whileHover={{ scale: 1.1, y: -2 }}
                 className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-black/60 dark:text-white/60 hover:text-[#088528] hover:border-[#088528]/50 transition-colors"
               >
@@ -117,7 +116,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-black/40 dark:text-white/40 text-sm">
-            © {new Date().getFullYear()} Levelz. כל הזכויות שמורות.
+            © {new Date().getFullYear()} Linkz. כל הזכויות שמורות.
           </p>
           <div className="flex gap-6 text-sm text-black/40 dark:text-white/40">
             <a href="#" className="hover:text-black/60 dark:hover:text-white/60 transition-colors">תנאי שימוש</a>

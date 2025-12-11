@@ -60,10 +60,6 @@ export default function SettingsPage() {
             <span className="text-xs text-foreground/60">אימייל</span>
             <span className="font-medium">{user.email}</span>
           </div>
-          <div className="flex flex-col gap-1">
-            <span className="text-xs text-foreground/60">User ID</span>
-            <span className="font-mono text-sm break-all">{user.id}</span>
-          </div>
         </CardContent>
       </Card>
 

@@ -178,7 +178,7 @@ export function ExpandableCardDemo() {
                     delay={3}
                     size={400}
                     borderWidth={2}
-                    className="from-transparent via-sky-500 to-transparent"
+                    className="from-transparent via-teal-500 to-transparent"
                   />
               </motion.div>
             ))}

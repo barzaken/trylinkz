@@ -49,7 +49,7 @@ export function HeroSection() {
       <div className="flex flex-col items-center gap-4 sm:flex-row h-full px-4">
         <div className="content flex-1">
           <h1 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
-            {"הלינקים שלכם לא ממירים."
+            {"הלינקים שלכם יכולים"
               .split(" ")
               .map((word, index) => (
                 <motion.span
@@ -67,7 +67,7 @@ export function HeroSection() {
                 </motion.span>
               ))}
             <br />
-            {"שלנו כן."
+            {"להמיר יותר."
               .split(" ")
               .map((word, index) => (
                 <motion.span
@@ -79,7 +79,7 @@ export function HeroSection() {
                     delay: (4 + index) * 0.1,
                     ease: "easeInOut",
                   }}
-                  className="mr-2 inline-block"
+                  className="mr-2 inline-block text-secondary"
                 >
                   {word}
                 </motion.span>

@@ -23,7 +23,9 @@ export default function ShortRedirectPage() {
           setStatus("not-found");
           return;
         }
+
         InAppRedirect({ targetUrl: record.destination_url });
+        setStatus("ready");
       } catch (err) {
         setError((err as Error).message);
         setStatus("not-found");
@@ -46,26 +48,30 @@ export default function ShortRedirectPage() {
     );
   }
 
-  return
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center gap-3">
+      <p className="text-lg font-semibold">הקישור נמצא</p>
+    </div>
+  )
 }
 
 function InAppRedirect({ targetUrl }: { targetUrl: string }) {
-  useEffect(() => {
-    const ua = navigator.userAgent.toLowerCase();
-    const isIG = ua.includes("instagram");
-    const isFB = ua.includes("fbav") || ua.includes("fban") || ua.includes("facebook");
-    const isTikTok = ua.includes("tiktok") || ua.includes("bytedance") || ua.includes("musical_ly");
+  const ua = navigator.userAgent.toLowerCase();
+  const isIG = ua.includes("instagram");
+  const isFB = ua.includes("fbav") || ua.includes("fban") || ua.includes("facebook");
+  const isTikTok = ua.includes("tiktok") || ua.includes("bytedance") || ua.includes("musical_ly");
+  if (isIG || isFB || isTikTok) {
+    let cleanUrl = targetUrl
+      .replace(/^https?:\/\//, '')   // הסרת http/https
+      .replace(/^www\./, '');        // הסרת www כדי להוסיף מחדש
 
-    if (isIG || isFB || isTikTok) {
-      let cleanUrl = targetUrl.replace(/^https?:\/\//, '');
-      if (ua.includes("android")) {
-        window.location.href = `intent://${cleanUrl}#Intent;scheme=https;package=com.android.chrome;end`;
-        return;
-      }
-      window.location.href = `x-safari-${cleanUrl}`;
-      window.open(`x-safari-${cleanUrl}`, "_blank");
+    cleanUrl = 'www.' + cleanUrl;
+    if (ua.includes("android")) {
+      window.location.href = `intent://${cleanUrl}#Intent;scheme=https;package=com.android.chrome;end`;
+      return;
     }
-  }, []);
-
+    window.location.href = `x-safari-${cleanUrl}`;
+    window.open(`x-safari-${cleanUrl}`, "_blank");
+  }
   return null;
 }

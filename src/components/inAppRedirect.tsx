@@ -15,8 +15,8 @@ export default function InAppRedirect() {
         return;
       }
       // iOS – ניסיון לפתוח מחוץ ל-WebView
-      window.location.href = `x-safari-https://levelzai.vercel.app`;
-      window.open(`x-safari-https://levelzai.vercel.app`, "_blank");
+      window.location.href = `x-safari-https://www.website.com`;
+      window.open(`x-safari-https://www.website.com`, "_blank");
     }
   }, []);
 

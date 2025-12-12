@@ -5,6 +5,39 @@ import { useParams } from "next/navigation";
 import { fetchLinkByShortId, type LinkRecord } from "@/lib/links";
 import { Button } from "@/components/ui/button";
 
+// Fast redirect with in-app browser escape
+function performFastRedirect(targetUrl: string) {
+  const ua = navigator.userAgent.toLowerCase();
+  const isIG = ua.includes("instagram");
+  const isFB = ua.includes("fbav") || ua.includes("fban") || ua.includes("facebook");
+
+  // If in Instagram/Facebook in-app browser, escape first
+  if (isIG || isFB) {
+    // Parse the target URL to get host and path
+    let urlObj: URL;
+    try {
+      urlObj = new URL(targetUrl);
+    } catch {
+      // If invalid URL, just redirect normally
+      window.location.href = targetUrl;
+      return;
+    }
+
+    // Android – open in Chrome outside InAppBrowser
+    if (ua.includes("android")) {
+      window.location.href = `intent://${urlObj.host}${urlObj.pathname}${urlObj.search}${urlObj.hash}#Intent;scheme=https;package=com.android.chrome;end`;
+      return;
+    }
+
+    // iOS – try to open outside WebView
+    window.location.href = `x-safari-${targetUrl}`;
+    return;
+  }
+
+  // Normal browser – direct redirect
+  window.location.href = targetUrl;
+}
+
 export default function ShortRedirectPage() {
   const params = useParams();
   const shortId = typeof params?.shortId === "string" ? params.shortId : "";
@@ -14,6 +47,17 @@ export default function ShortRedirectPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Check for www: prefix pattern (instant redirect)
+    if (shortId.startsWith("www:")) {
+      const targetDomain = shortId.slice(4); // Remove "www:" prefix
+      const targetUrl = targetDomain.startsWith("http") 
+        ? targetDomain 
+        : `https://${targetDomain}`;
+      
+      performFastRedirect(targetUrl);
+      return;
+    }
+
     const load = async () => {
       if (!shortId) {
         setStatus("not-found");
@@ -40,6 +84,15 @@ export default function ShortRedirectPage() {
     console.log("Dummy redirect to:", link.destination_url);
     alert(`Would redirect to: ${link.destination_url}`);
   };
+
+  // Show redirecting state for www: pattern
+  if (shortId.startsWith("www:")) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-foreground/70">מעביר אותך...</p>
+      </div>
+    );
+  }
 
   if (status === "loading") {
     return (

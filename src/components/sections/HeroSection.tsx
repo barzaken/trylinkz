@@ -183,7 +183,7 @@ export function HeroSection() {
           className="h-full relative z-10 mt20 rounded-3xl bordr border-neutral-200 bgneutral-100 p-4 shadowmd dark:borderneutral-800 dark:bgneutral-900 sm:max-w-1/3"
         >
           <div className="w-full h-full overflow-hidden rounded-xl bordr border-gray-300 dark:bordergray-700">
-            <video
+            {/* <video
               ref={videoRef}
               className="aspect-[16/9] h-full w-full object-contain"
               autoPlay
@@ -196,7 +196,7 @@ export function HeroSection() {
               <source src="/demo2.mp4" type="video/mp4" />
               <source src="/your-video.webm" type="video/webm" />
               Your browser does not support the video tag.
-            </video>
+            </video> */}
           </div>
         </motion.div>
       </div>

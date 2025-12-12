@@ -52,13 +52,9 @@ import { useEffect } from "react";
 export default function InAppRedirect() {
   useEffect(() => {
     const ua = navigator.userAgent.toLowerCase();
-    const isIG = ua.includes("instagram");
-    const isFB = ua.includes("fbav") || ua.includes("fban") || ua.includes("facebook");
-    const isTikTok = ua.includes("tiktok") || ua.includes("bytedance") || ua.includes("musical_ly");
-
-    if (isIG || isFB || isTikTok) {
+    const isInApp = getAppKey(ua);
+    if (isInApp) {
       const url = window.location.href;
-
       if (url.startsWith("https://trylinkz.vercel.app/www")) {
         const fullPath = window.location.pathname.slice(1) + window.location.search + window.location.hash;
         if (ua.includes("android")) {
@@ -82,3 +78,57 @@ export default function InAppRedirect() {
 
   return null;
 }
+
+const appNameRegExps = {
+  messenger: {
+    regex:
+      /(\bFB[\w_]+\/(Messenger))|(^(?!.*\buseragents)(?!.*\bIABMV).*(FB_IAB|FBAN).*)/i, // Experimental for newer UAs - don't have `"useragents:" or end in "IABMV"
+    name: "Facebook Messenger",
+  },
+  instagram: {
+    regex: /\bInstagram/i,
+    name: "Instagram",
+  },
+  facebook: {
+    regex: /\bFB[\w_]+\/|\bFacebook/i,
+    name: "Facebook",
+  },
+  twitter: {
+    regex: /\bTwitter/i,
+    name: "Twitter",
+  },
+  threads: {
+    regex: /\bBarcelona/i,
+    name: "Threads",
+  },
+  tiktok: {
+    regex: /musical_ly|Bytedance/i,
+    name: "TikTok",
+  },
+  snapchat: {
+    regex: /Snapchat/i,
+    name: "Snapchat",
+  },
+  linkedin: {
+    regex: /LinkedInApp/i,
+    name: "LinkedIn",
+  },
+  gsa: {
+    regex: /GSA/i,
+    name: "Google Search App",
+  },
+  whatsapp: {
+    regex: /\b(WAiOS|WA4A)\//i,
+    name: "WhatsApp",
+  },
+} as const;
+
+const appKeysDetectByUA = Object.keys(
+  appNameRegExps
+) as (keyof typeof appNameRegExps)[];
+
+const getAppKey = (ua: string) => {
+  return appKeysDetectByUA.find((appName) =>
+    appNameRegExps[appName].regex.test(ua)
+  );
+};

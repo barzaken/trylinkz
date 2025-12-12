@@ -48,7 +48,7 @@ export default function InAppRedirect() {
     if (isIG || isFB) {
       const url = window.location.href;
       
-      if (url.startsWith("https://trylinkz.vercel.app/www")) {
+      if (url.includes("trylinkz.io/www")) {
         // קח את כל מה שאחרי הדומיין כולל query params
         const fullPath = window.location.pathname.slice(1) + window.location.search + window.location.hash;
         

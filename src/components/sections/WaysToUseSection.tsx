@@ -26,7 +26,7 @@ export function WaysToUseSection() {
             <div style={{direction: "ltr"}} className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
               <h2 className="text-xl sm:text-2xl text-white font-bold">trylinkz.io<span className="text-secondary">/</span></h2>
           <TypingAnimation
-          words={["www.google.com", "www.aliexpress.com", "www.amazon.com","www.youtube.com"]}
+          words={["www.google.com", "www.aliexpres.com", "www.amazon.com","www.youtube.com"]}
           blinkCursor={true}
           pauseDelay={2000}
           loop

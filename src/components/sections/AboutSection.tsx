@@ -25,7 +25,7 @@ export function AboutSection() {
 
             <p className="dark:text-white/60 text-black/60 text-lg leading-relaxed mb-8">
               Linkz נולד כדי לתקן את הבעיה של דפדפני in-app שמורידים אמון ומורידים המרות.
-              אנחנו פותחים כל קליק בדפדפן ברירת המחדל, משמרים אנליטיקס, ומוסיפים 30-40% תוצאות בממוצע – בלי לגעת במבנה הקמפיין.
+              אנחנו פותחים כל לינק בדפדפן ברירת המחדל, משמרים אנליטיקס, ומוסיפים 30-40% תוצאות בממוצע – בלי לגעת במבנה הקמפיין.
             </p>
 
             <p className="dark:text-white/60 text-black/60 text-lg leading-relaxed mb-10">

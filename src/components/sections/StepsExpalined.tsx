@@ -110,7 +110,7 @@ export function StepsExpalined() {
 
 const steps = [
   {
-    title: "קליק על קישור",
+    title: "לחיצה על לינק",
     video: "/demo1.mp4",
 
   },

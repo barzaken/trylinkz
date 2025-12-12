@@ -7,13 +7,14 @@ import { Logo } from "../ui/logo";
 import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 import { DotPattern } from "../ui/dot-pattern";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 export function HeroSection() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isVideoLoaded, setIsVideoLoaded] = useState(false)
-
+  const router = useRouter();
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
@@ -134,7 +135,7 @@ export function HeroSection() {
             }}
             className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
           >
-            <Button variant="default" className="w-60">
+            <Button onClick={() => router.push("/auth")} variant="default" className="w-60">
               התחילו בחינם
             </Button>
             <Button variant="outline" className="w-60" onClick={() => {

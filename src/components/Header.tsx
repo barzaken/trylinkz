@@ -173,9 +173,9 @@ export function Header() {
                 asChild
                 className="mt-4 bg-secondary hover:bg-secondary/80 text-white font-semibold px-8 py-3 rounded-full"
               >
-                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link href="/auth" onClick={() => setIsMobileMenuOpen(false)}>
                   התחילו עכשיו
-                </a>
+                </Link>
               </Button>
             </nav>
           </motion.div>

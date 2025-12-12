@@ -162,15 +162,16 @@ export function HeroSection() {
             delay: 1.2,
           }}
           onAnimationComplete={() => setIsVideoLoaded(true)}
-          className="h-full relative z-10 mt20 rounded-3xl bordr border-neutral-200 bgneutral-100 p-4 shadowmd dark:borderneutral-800 dark:bgneutral-900 sm:max-w-1/3"
+          className="h-full relative z-10 mt20 rounded-3xl bordr border-neutral-200 bgneutral-100 p-4 shadowmd dark:borderneutral-800 dark:bgneutral-900 sm:max-w-1/3 pointer-events-none"
         >
-          <div className="w-full h-full overflow-hidden rounded-xl bordr border-gray-300 dark:bordergray-700">
+          <div className="w-full h-full overflow-hidden rounded-xl bordr border-gray-300 dark:bordergray-700 pointer-events-none">
             <Image
               src="/trylinkzdemo.gif" // Path to your GIF in the /public folder
               alt="A description of the gif"
               width={500} // Set appropriate width
               height={300} // Set appropriate height
               unoptimized={true} // Essential for the GIF to play
+              className="pointer-events-none"
             />
             {/* <video
               ref={videoRef}

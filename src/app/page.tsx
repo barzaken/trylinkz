@@ -7,18 +7,22 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { IconCloudDemo } from "@/components/sections/IconsDemo";
 import ExpandableTechCards from "@/components/sections/ExpandableTechCards";
+import { StepsExpalined } from "@/components/sections/StepsExpalined";
+import { WhyLinkzSection } from "@/components/sections/WhyLinkzSection";
 export default function Home() {
   return (
     <div className="w-full">
       <HeroSection />
-      <FeaturesSectionDemo />
-      <IconCloudDemo />
-      <PointerHighlightDemo />
-      <ExpandableTechCards />
+      <StepsExpalined />
       <AnimatedBeamDemo />
-      <ExpandableCardDemo />
+      <PointerHighlightDemo />
+      {/* <FeaturesSectionDemo /> */}
+      <WhyLinkzSection />
+      <IconCloudDemo />
       <AboutSection />
-      <CTASection />
+      {/* <ExpandableTechCards /> */}
+      <ExpandableCardDemo />
+      {/* <CTASection /> */}
     </div>
   );
 }

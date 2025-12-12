@@ -26,7 +26,7 @@ export function CTASection() {
     }
       id="contact"
       contentDot={true}
-      title="Linkz הוא חינם"
+      title="צריכים עזרה?"
       description="השאירו פרטים ונעזור לכם להקים את זה בדקות">
       <div id="contact" className="`relative` col-span-2 ">
         <div className="grid lg:grid-cols-2 gap-16 items-start sm:py-12">

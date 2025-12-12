@@ -136,8 +136,8 @@ export function FeaturesSectionDemo() {
       // headerContentDot={true}
       headerContent={featuredIconsScrollable}
       contentDot={true}
-      id="01" title="Linkz: לינקים שממירים"
-      description="חוויית גלישה מהירה, שקופה ובחינם"
+      id="01" title="מה זה Linkz?"
+      description="בואו תראו איך הקסם קורה"
       HeaderIcon={<IconCloud className="size-5 text-secondary" />}>
       <div className="col-span-2">
         <div className="flex pb-4 no-scrollbar bgbackground darkbg-neutral-900  overflow-scroll gap-8 sm:gap-0  sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  relative z-10 ">

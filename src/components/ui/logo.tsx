@@ -8,13 +8,6 @@ import { useState } from "react";
 export function Logo({width,height}: {width: number,height: number}) {
   const { theme } = useTheme();
   const isDark = theme === "dark";
-const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
   return (
     <Image src={isDark ? linkzLogoWhite : linkzLogo} alt="Linkz Logo" width={width} height={height} />
   );

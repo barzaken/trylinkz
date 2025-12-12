@@ -34,11 +34,11 @@ Circle.displayName = "Circle";
 
 export function AnimatedBeamDemo() {
   return (
-    <Container id="05"
+    <Container id="02"
       headerContent={<TypewriterEffectDemo />}
       contentDot={true}
       headerContentDot
-      title="נתונים שממשיכים איתכם"
+      title="למה זה טוב?"
       description="שומרים על פיקסלים ו-UTM גם כשעוברים לדפדפן הנייטיב">
 
       <>

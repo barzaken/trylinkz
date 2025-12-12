@@ -3,72 +3,49 @@ import { IconCloud } from "../ui/icon-cloud"
 import { Button } from "../ui/button"
 import { BorderBeam } from "../ui/border-beam"
 import { Container } from "../ui/container"
-import { EncryptedText } from "../ui/encrypted-text"
-import { DotPattern } from "../ui/dot-pattern"
+// import { EncryptedText } from "../ui/encrypted-text"
+// import { DotPattern } from "../ui/dot-pattern"
 const slugs = [
     // Core Web & Frontend
+    "angular",
     "react",
     "nextdotjs",
     "vuedotjs",
-
-    // Mobile & Cross-Platform
+    "wordpress",
+    "shopify",
+    "woocommerce",
     "expo",
-    "flutter",
-    "swift",
-    "kotlin",
-
-    // JavaScript Ecosystem
-    "nestjs",
-    "nodedotjs",
-    "vite",
-
-    // Backend / Databases
-    "express",
-    "fastapi",
-    "django",
-    "laravel",
-    "prisma",
-    "mongodb",
-    "postgresql",
-    "mysql",
-    "redis",
-    "supabase",
-
-    // Cloud Platforms
+    "php",
+"html",
     "vercel",
-    "googlecloud",
     "cloudflare",
-
-
-
-
-    // DevOps / CI/CD
-    "docker",
-    "kubernetes",
-    "gitlab",
-
-    // Automation (Make, Zapier)
-    "zapier",
-    "make",
-
-    // Tools / Editors
-    "postman",
-    "figma",
-    "notion",
-
-    // Version Control
-    "git",
-    "github",
-    "gitlab",
-
-
-
-    // Payments / Infra
-    "stripe",
-
-    // Social APIs / Auth
-    "auth0",
-    "firebase"
+    "apple",
+    "android",
+    "windows",
+    "macos",
+    "ios",
+    "samsung",
+    "chrome",
+    "firefox",
+    "wordpress",
+    "shopify",
+    "woocommerce",
+    "expo",
+    "safari",
+    "opera",
+    "edge",
+    "instagram",
+    "facebook",
+    "tiktok",
+    "vercel",
+    "windows",
+    "macos",
+    "ios",
+    "samsung",
+    "chrome",
+    "cloudflare",
+    "apple",
+    "android",
 ]
 
 
@@ -78,21 +55,21 @@ export function IconCloudDemo() {
     )
 
     return (
-        <Container id="02"
-            isDotSeperator={true}
-            title="סומכים על Linkz"
+        <Container id="05"
+            // isDotSeperator={true}
+            title="Linkz them all"
             headerContent={
                 <div className="h-full flex items-center ">
-            <EncryptedText
+                    {/* <EncryptedText
                 className="text-md font-bold"
                 text="✨ אמון של משווקי 7 ספרות"
                 encryptedClassName="text-neutral-500"
                 revealedClassName="dark:text-white text-black"
                 revealDelayMs={120}
-            />
-            </div>
-        }
-            description="Linkz חינמי, מאובטח ושומר על כל הנתונים שלכם" >
+            /> */}
+                </div>
+            }
+            description="Linkz עובד על כל סוגי האתרים, הפלטפורמות והמכשירים" >
             <>
                 {/* Text Side */}
                 <div className="col-span-1 flex flex-col gap-2  text-right">
@@ -108,14 +85,14 @@ export function IconCloudDemo() {
 
                 {/* Icon Side */}
                 <div className="col-span-1 relative bg-white dark:bg-black shadow-xl rounded-lg   relative flex  justify-center ">
-                    <IconCloud images={images}/>
+                    <IconCloud images={images} />
                     <BorderBeam
                         duration={6}
                         delay={3}
                         size={400}
                         borderWidth={2}
                         className="from-transparent via-teal-500 to-transparent" />
-                    <DotPattern speed={50} />
+                    {/* <DotPattern speed={50} /> */}
                 </div>
             </>
         </Container>

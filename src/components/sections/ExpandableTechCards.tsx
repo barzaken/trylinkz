@@ -89,7 +89,7 @@ const ExpandableTechCards = () => {
     return (
         <Container
         //  headerContent={<TextGenerateEffectBlock />} 
-         id="04" isDotSeperator={true} headerContentDot={true} title="למה משווקים בוחרים ב-Linkz" description="יותר המרות, פחות חיכוך, חינם">
+         id="07" isDotSeperator={true} headerContentDot={true} title="למה משווקים בוחרים ב-Linkz" description="יותר המרות, פחות חיכוך, חינם">
 
             <div className="col-span-2 w-full gap-4 flex-col flex sm:flex-row items-start justify-center mx-auto overflow-hidden">
                 <div className="col-span-1 flex flex-col text-right min-w-1/2 ">

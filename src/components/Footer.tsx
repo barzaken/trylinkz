@@ -119,8 +119,12 @@ export function Footer() {
             © {new Date().getFullYear()} Linkz. כל הזכויות שמורות.
           </p>
           <div className="flex gap-6 text-sm text-black/40 dark:text-white/40">
-            <a href="#" className="hover:text-black/60 dark:hover:text-white/60 transition-colors">תנאי שימוש</a>
-            <a href="#" className="hover:text-black/60 dark:hover:text-white/60 transition-colors">מדיניות פרטיות</a>
+            <Link href="/terms" className="hover:text-black/60 dark:hover:text-white/60 transition-colors">
+              תנאי שימוש
+            </Link>
+            <Link href="/privacy" className="hover:text-black/60 dark:hover:text-white/60 transition-colors">
+              מדיניות פרטיות
+            </Link>
           </div>
         </div>
       </div>

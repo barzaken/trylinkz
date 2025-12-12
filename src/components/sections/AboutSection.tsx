@@ -6,7 +6,7 @@ import { BorderBeam } from "../ui/border-beam";
 
 export function AboutSection() {
   return (
-      <Container id="about" splitHeader={false} isDotSeperator={true} title="עלינו" description="הכירו את Linkz – הלינק שחוסך חיכוך ומוסיף המרות">
+      <Container id="06" splitHeader={false} isDotSeperator={true} title="התקנה בלחיצת כפתור" description="הטמיעו את Linkz בלחיצת כפתור">
 
     <>
           {/* Content */}

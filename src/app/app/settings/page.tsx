@@ -17,9 +17,7 @@ import { Separator } from "@/components/ui/separator";
 export default function SettingsPage() {
   const { user, loading, error, signOut } = useAuth();
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), []);
 
   const isDark = theme === "dark";
 
@@ -71,7 +69,7 @@ export default function SettingsPage() {
         <CardContent className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-1">
             <p className="font-medium">מצב נוכחי</p>
-            <p className="text-sm text-foreground/70">{mounted ? (isDark ? "כהה" : "בהיר") : "..."}</p>
+            <p className="text-sm text-foreground/70">{isDark ? "כהה" : "בהיר"}</p>
           </div>
           <div className="flex gap-2">
             <Button variant={!isDark ? "default" : "outline"} onClick={() => setTheme("light")}>

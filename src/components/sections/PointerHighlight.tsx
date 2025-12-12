@@ -6,7 +6,7 @@ import { ContainerTextFlip } from "../ui/container-text-flip";
 
 export function PointerHighlightDemo() {
   return (
-    <Container id="03" splitHeader={false} title="איך זה עובד" description="3 שלבים פשוטים שמעלים המרות">
+    <Container id="03" splitHeader={false} title="איך זה עובד?" description="3 שלבים פשוטים שמעלים המרות">
 
       <div className="col-span-2 mx-auto grid w-full grid-cols-1 gap-4  sm:grid-cols-3 px-6 lg:px-0 ">
         <div className="rounded-md p-6 px-0 ">

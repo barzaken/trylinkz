@@ -82,7 +82,7 @@ const Pill = ({
   );
 };
 
-export function WhyLinkzSection() {
+export function CompareSection() {
   return (
     <Container
       id="04"

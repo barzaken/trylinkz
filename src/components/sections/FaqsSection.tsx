@@ -47,7 +47,7 @@ const faqs = [
   },
 ];
 
-export function ExpandableCardDemo() {
+export function FaqsSection() {
   return (
     <Container
       id="07"

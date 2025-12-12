@@ -6,25 +6,35 @@
 //     const ua = navigator.userAgent.toLowerCase();
 //     const isIG = ua.includes("instagram");
 //     const isFB = ua.includes("fbav") || ua.includes("fban") || ua.includes("facebook");
+
 //     if (isIG || isFB) {
 //       const url = window.location.href;
-//       if (url.startsWith("https://trylinkz.vercel.app/www")) {
-//         const path = window.location.pathname.slice(1)
+
+//       if (url.includes("trylinkz.io/www")) {
+//         // קח את כל מה שאחרי הדומיין כולל query params
+//         const fullPath = window.location.pathname.slice(1) + window.location.search + window.location.hash;
+
 //         // ANDROID – פתיחה בכרום מחוץ ל-InAppBrowser
 //         if (ua.includes("android")) {
-//           window.location.href = `intent://${path}#Intent;scheme=https;package=com.android.chrome;end`;
+//           window.location.href = `intent://${fullPath}#Intent;scheme=https;package=com.android.chrome;end`;
 //           return;
 //         }
+
 //         // iOS – ניסיון לפתוח מחוץ ל-WebView
-//         window.location.href = `x-safari-https://${path}`;
-//         window.open(`x-safari-https://${path}`, "_blank");
+//         window.location.href = `x-safari-https://${fullPath}`;
+//         window.open(`x-safari-https://${fullPath}`, "_blank");
 //         return;
 //       }
+
+//       // עבור כתובות רגילות (לא www)
+//       const fullPath = location.host + location.pathname + location.search + location.hash;
+
 //       // ANDROID – פתיחה בכרום מחוץ ל-InAppBrowser
 //       if (ua.includes("android")) {
-//         window.location.href = `intent://${location.host}${location.pathname}#Intent;scheme=https;package=com.android.chrome;end`;
+//         window.location.href = `intent://${fullPath}#Intent;scheme=https;package=com.android.chrome;end`;
 //         return;
 //       }
+
 //       // iOS – ניסיון לפתוח מחוץ ל-WebView
 //       window.location.href = `x-safari-${url}`;
 //       window.open(`x-safari-${url}`, "_blank");
@@ -44,36 +54,27 @@ export default function InAppRedirect() {
     const ua = navigator.userAgent.toLowerCase();
     const isIG = ua.includes("instagram");
     const isFB = ua.includes("fbav") || ua.includes("fban") || ua.includes("facebook");
-    
-    if (isIG || isFB) {
+    const isTikTok = ua.includes("tiktok") || ua.includes("bytedance") || ua.includes("musical_ly");
+
+    if (isIG || isFB || isTikTok) {
       const url = window.location.href;
-      
-      if (url.includes("trylinkz.io/www")) {
-        // קח את כל מה שאחרי הדומיין כולל query params
+
+      if (url.startsWith("https://trylinkz.vercel.app/www")) {
         const fullPath = window.location.pathname.slice(1) + window.location.search + window.location.hash;
-        
-        // ANDROID – פתיחה בכרום מחוץ ל-InAppBrowser
         if (ua.includes("android")) {
           window.location.href = `intent://${fullPath}#Intent;scheme=https;package=com.android.chrome;end`;
           return;
         }
-        
-        // iOS – ניסיון לפתוח מחוץ ל-WebView
         window.location.href = `x-safari-https://${fullPath}`;
         window.open(`x-safari-https://${fullPath}`, "_blank");
         return;
       }
-      
-      // עבור כתובות רגילות (לא www)
+
       const fullPath = location.host + location.pathname + location.search + location.hash;
-      
-      // ANDROID – פתיחה בכרום מחוץ ל-InAppBrowser
       if (ua.includes("android")) {
         window.location.href = `intent://${fullPath}#Intent;scheme=https;package=com.android.chrome;end`;
         return;
       }
-      
-      // iOS – ניסיון לפתוח מחוץ ל-WebView
       window.location.href = `x-safari-${url}`;
       window.open(`x-safari-${url}`, "_blank");
     }

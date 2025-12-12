@@ -49,7 +49,7 @@ const slugs = [
 ]
 
 
-export function IconCloudDemo() {
+export function WorksOnPlatformsSection() {
     const images = slugs.map(
         (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
     )

@@ -32,7 +32,7 @@ const Circle = forwardRef<
 
 Circle.displayName = "Circle";
 
-export function AnimatedBeamDemo() {
+export function BenefitsSection() {
   return (
     <Container id="02"
       headerContent={<TypewriterEffectDemo />}
@@ -103,7 +103,7 @@ function AnimatedBeamDia() {
           </Circle>
           <Circle ref={div4Ref} className="size-16">
             {/* <Icons.openai /> */}
-            <Logo width={50} height={50} />
+            <Logo width={50} height={50} forceDark={false} />
           </Circle>
           <Circle ref={div6Ref}>
             <img src={Icons.facebook} alt="facebook" width={50} height={50} />
@@ -565,10 +565,6 @@ const Icons = {
   //   </svg>
   // ),
 }
-
-
-
-
 
 function TypewriterEffectDemo() {
   const words = [

@@ -4,7 +4,7 @@ import { Container } from "../ui/container";
 import { motion } from "framer-motion";
 import { ContainerTextFlip } from "../ui/container-text-flip";
 
-export function PointerHighlightDemo() {
+export function WaysToUseSection() {
   return (
     <Container id="03" splitHeader={false} title="איך זה עובד?" description="3 שלבים פשוטים שמעלים המרות">
 

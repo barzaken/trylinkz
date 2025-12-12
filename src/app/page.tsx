@@ -1,28 +1,22 @@
 import { HeroSection } from "@/components/sections/HeroSection";
-import { FeaturesSectionDemo } from "@/components/sections/FeaturesSection";
-import { PointerHighlightDemo } from "@/components/sections/PointerHighlight";
-import { ExpandableCardDemo } from "@/components/sections/ExpandableCards";
-import { AnimatedBeamDemo } from "@/components/sections/AnimatedBeamDemo";
+import { WaysToUseSection } from "@/components/sections/WaysToUseSection";
+import { FaqsSection } from "@/components/sections/FaqsSection";
+import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { AboutSection } from "@/components/sections/AboutSection";
-import { CTASection } from "@/components/sections/CTASection";
-import { IconCloudDemo } from "@/components/sections/IconsDemo";
-import ExpandableTechCards from "@/components/sections/ExpandableTechCards";
+import { WorksOnPlatformsSection } from "@/components/sections/WorksOnPlatformsSection";
 import { StepsExpalined } from "@/components/sections/StepsExpalined";
-import { WhyLinkzSection } from "@/components/sections/WhyLinkzSection";
+import { CompareSection } from "@/components/sections/CompareSection";
 export default function Home() {
   return (
     <div className="w-full">
       <HeroSection />
       <StepsExpalined />
-      <AnimatedBeamDemo />
-      <PointerHighlightDemo />
-      {/* <FeaturesSectionDemo /> */}
-      <WhyLinkzSection />
-      <IconCloudDemo />
+      <BenefitsSection />
+      <WaysToUseSection />
+      <CompareSection />
+      <WorksOnPlatformsSection />
       <AboutSection />
-      {/* <ExpandableTechCards /> */}
-      <ExpandableCardDemo />
-      {/* <CTASection /> */}
+      <FaqsSection />
     </div>
   );
 }

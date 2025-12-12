@@ -63,7 +63,6 @@ export function StepsExpalined() {
       id="01"
       title="הכירו את Linkz"
       description="בואו תראו איך הקסם קורה"
-      HeaderIcon={<IconClockHour6 className="size-5 text-secondary" />}
       headerContent={<StepsIcons activeIndex={activeIndex} />}
     >
       <div className="relative flex w-full flex-col gap-4">

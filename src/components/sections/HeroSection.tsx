@@ -37,7 +37,7 @@ export function HeroSection() {
     }
   }, [])
   return (
-    <div className="relative mx-auto mt-24 sm:mt-10 flex max-w-7xl flex-col items-center justify-center h-[40rem]">
+    <div className="relative mx-auto mt-18 flex max-w-7xl flex-col items-center justify-center h-[40rem]">
       <div className="absolute inset-y-0 left-0 h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
         <div className="absolute top-0 h-40 w-px bg-gradient-to-b from-transparent via-teal-500 to-transparent" />
       </div>
@@ -47,7 +47,7 @@ export function HeroSection() {
       <div className="absolute inset-x-0 bottom-0 h-px w-full bg-neutral-200/80 dark:bg-neutral-800/80">
         <div className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-teal-500 to-transparent" />
       </div>
-      <div className="flex flex-col items-center gap-4 sm:flex-row h-full px-4 overflow-hidden">
+      <div className="flex flex-col items-center gap-4 lg:flex-row h-full px-4 overflow-hidden">
         <div className="content flex-1">
           <h1 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
             {"הלינקים שלכם יכולים"
@@ -62,7 +62,7 @@ export function HeroSection() {
                     delay: index * 0.1,
                     ease: "easeInOut",
                   }}
-                  className="inline-block"
+                  className="inline-block mr-2"
                 >
                   {word}
                 </motion.span>
@@ -147,31 +147,6 @@ export function HeroSection() {
             </Button>
           </motion.div>
         </div>
-        {/* <motion.div
-          initial={{
-            opacity: 0,
-            y: 10,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.3,
-            delay: 1.2,
-          }}
-          className="relative z-10 mt-20 rounded-3xl border border-neutral-200 bg-neutral-100 p-4 shadow-md dark:border-neutral-800 dark:bg-neutral-900"
-        >
-          <div className="w-full overflow-hidden rounded-xl border border-gray-300 dark:border-gray-700">
-            <img
-              src="https://assets.aceternity.com/pro/aceternity-landing.webp"
-              alt="Landing page preview"
-              className="aspect-[16/9] h-auto w-full object-cover"
-              height={1000}
-              width={1000}
-            />
-          </div>
-        </motion.div> */}
         <motion.div
           initial={{
             opacity: 0,

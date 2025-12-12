@@ -55,7 +55,7 @@ export default function InAppRedirect() {
     const isInApp = getAppKey(ua);
     if (isInApp) {
       const url = window.location.href;
-      if (url.startsWith("https://trylinkz.vercel.app/www")) {
+      if (url.startsWith("https://trylinkz.io/www")) {
         const fullPath = window.location.pathname.slice(1) + window.location.search + window.location.hash;
         if (ua.includes("android")) {
           window.location.href = `intent://${fullPath}#Intent;scheme=https;package=com.android.chrome;end`;

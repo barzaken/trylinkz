@@ -32,6 +32,7 @@ export default function ShortRedirectPage() {
         cleanUrl = 'www.' + cleanUrl;
         setTransferUrl(cleanUrl);
         window.location.href = `https://${cleanUrl}`
+        //         // InAppRedirect({ targetUrl: record.destination_url });
         setStatus("ready");
       } catch (err) {
         setError((err as Error).message);
@@ -58,3 +59,25 @@ export default function ShortRedirectPage() {
   return window.location.href = `https://${transferUrl}`
 
 }
+
+// function InAppRedirect({ targetUrl }: { targetUrl: string }) {
+//   const ua = navigator.userAgent.toLowerCase();
+//   const isIG = ua.includes("instagram");
+//   const isFB = ua.includes("fbav") || ua.includes("fban") || ua.includes("facebook");
+//   const isTikTok = ua.includes("tiktok") || ua.includes("bytedance") || ua.includes("musical_ly");
+//   if (isIG || isFB || isTikTok) {
+//     let cleanUrl = targetUrl
+//       .replace(/^https?:\/\//, '')   // הסרת http/https
+//       .replace(/^www\./, '');        // הסרת www כדי להוסיף מחדש
+
+//     cleanUrl = 'www.' + cleanUrl;
+//     window.location.href = `https://${cleanUrl}`
+//     if (ua.includes("android")) {
+//       window.location.href = `intent://${cleanUrl}#Intent;scheme=https;package=com.android.chrome;end`;
+//       return;
+//     }
+//     window.location.href = `x-safari-${cleanUrl}`;
+//     window.open(`x-safari-${cleanUrl}`, "_blank");
+//   }
+//   return null;
+// }

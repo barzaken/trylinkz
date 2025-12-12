@@ -37,7 +37,7 @@ export function Footer() {
               <Logo width={100} height={100} />
             </Link>
             <p className="text-black/60 dark:text-white/60 leading-relaxed max-w-md">
-              Linkz פותח כל לינק בדפדפן ברירת המחדל ומאיץ את האתר, כך שתראו עוד 30-40% תוצאות. הכל בחינם וללא שינוי במבנה הקמפיינים שלכם.
+              Linkz פותח כל לינק בדפדפן ברירת המחדל ומשפר את ההמרות, כך שתראו עוד 30-40% תוצאות. הכל בחינם וללא שינוי במבנה הקמפיינים שלכם.
             </p>
             <div className="flex gap-4 mt-4">
               <motion.a

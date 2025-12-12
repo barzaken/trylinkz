@@ -118,7 +118,7 @@ export function HeroSection() {
             }}
             className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400"
           >
-            Linkz פותח כל לינק בדפדפן ברירת המחדל ומאיץ את האתר, כך שתראו עוד
+            Linkz פותח כל לינק בדפדפן ברירת המחדל ומשפר את ההמרות, כך שתראו עוד
             30-40% תוצאות. הכל בחינם וללא שינוי במבנה הקמפיינים שלכם.
           </motion.p>
           <motion.div

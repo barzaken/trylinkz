@@ -55,7 +55,7 @@ export function StepsExpalined() {
     >
       <div id="steps-explained"
         className="relative  flex w-full flex-col gap-4">
-        <div className="relative w-full overflow-hidden rounded-2xl aspect-[5/3] border border-neutral-200/80 bg-neutral-50 shadow-inner dark:border-neutral-800 dark:bg-neutral-900"> 
+        <div className="relative w-full overflow-hidden rounded-2xl aspect-[5/3] border border-neutral-200/80 bg-[#0b0e15] shadow-inner dark:border-neutral-800 dark:bg-neutral-900"> 
         {/* <video
         key={activeStep.video}
               ref={videoRef}

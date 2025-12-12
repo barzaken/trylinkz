@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Container } from "../ui/container";
-
-
+import img1 from "../../../public/1.svg";
+import img2 from "../../../public/2.svg";
+import img3 from "../../../public/3.svg";
+import Image from "next/image";
 const STEP_DURATION_MS = 4000; // 3 steps * 4s = 12s total
 
 
@@ -14,6 +16,7 @@ export function StepsExpalined() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeStep = steps[activeIndex];
   const videoRef = useRef<HTMLVideoElement>(null)
+  const MotionImage = motion(Image);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -55,8 +58,8 @@ export function StepsExpalined() {
     >
       <div id="steps-explained"
         className="relative  flex w-full flex-col gap-4">
-        <div className="relative w-full overflow-hidden rounded-2xl aspect-[5/3] border border-neutral-200/80 bg-[#0b0e15] shadow-inner dark:border-neutral-800 dark:bg-neutral-900"> 
-        {/* <video
+        <div className="relative w-full overflow-hidden rounded-2xl aspect-[5/3] border border-neutral-200/80 bg-[#0b0e15] shadow-inner dark:border-neutral-800 dark:bg-neutral-900">
+          {/* <video
         key={activeStep.video}
               ref={videoRef}
               className="aspect-[16/9] h-full w-full object-cover"
@@ -70,23 +73,19 @@ export function StepsExpalined() {
               <source src="/your-video.webm" type="video/webm" />
               Your browser does not support the video tag.
             </video> */}
-      <AnimatePresence mode="wait">
-        <motion.video
-          key={activeStep.video}
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          initial={{ x: 80, opacity: 0 }}       // כניסה עדינה מימין
-          animate={{ x: 0, opacity: 1 }}        // מתמקם במרכז
-          exit={{ x: -80, opacity: 0 }}         // יציאה שמאלה
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-        >
-          <source src={activeStep.video} type="video/mp4" />
-        </motion.video>
-      </AnimatePresence>
+          <AnimatePresence mode="wait">
+              <MotionImage
+                fill
+                alt={activeStep.title}
+                key={activeStep.img}
+                src={activeStep.img}
+                initial={{ opacity: 0, x: 20 }}        // מאיפה מתחיל
+                animate={{ opacity: 1, x: 0 }}          // לאן נכנס
+                exit={{ opacity: 0, x: -20 }}           // איך יוצא
+                transition={{ duration: 0.7, ease: "easeInOut" }}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+          </AnimatePresence>
         </div>
       </div>
       <div className="flex flex-col gap-4">
@@ -113,9 +112,9 @@ export function StepsExpalined() {
             של המשתמש
           </h2>
           <p className="dark:text-white/60 text-black/60 max-w-2xl mx-auto text-lg">
-          Linkz הופך כל קישור לקישור שנפתח בדפדפן הטבעי של המשתמש במכשיר, עובד על כל מכשיר, כל פלטפורמה, כל קישור.
+            Linkz הופך כל קישור לקישור שנפתח בדפדפן הטבעי של המשתמש במכשיר, עובד על כל מכשיר, כל פלטפורמה, כל קישור.
             <br></br>
-           <span className="text-secondary"> למה? </span>
+            <span className="text-secondary"> למה? </span>
             <br></br>
             גלישה בדפדפן נייטיב משפרת את איסוף הנתונים ומעלה את ההמרות.
           </p>
@@ -128,16 +127,16 @@ export function StepsExpalined() {
 const steps = [
   {
     title: "לחיצה על לינק",
-    video: "/demo1.mp4",
+    img: img1,
 
   },
   {
     title: "Linkz פועל",
-    video: "/demo2.mp4",
+    img: img2,
   },
   {
     title: "ההמרות עולות",
-    video: "/demo3.mp4",
+    img: img3,
   },
 ];
 

@@ -12,7 +12,6 @@ import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { createLink, type LinkRecord } from "@/lib/links";
-import { Confetti, type ConfettiRef } from "@/components/ui/confetti";
 import {
   Dialog,
   DialogContent,
@@ -97,7 +96,6 @@ function QuickCreateModal({
   const [creating, setCreating] = useState(false);
   const [created, setCreated] = useState<LinkRecord | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const confettiRef = useRef<ConfettiRef>(null);
 
   const shortLink = useMemo(() => {
     if (!created) return "";
@@ -113,7 +111,6 @@ function QuickCreateModal({
       const record = await createLink(user.id, destination.trim());
       setCreated(record);
       setDestination("");
-      confettiRef.current?.fire({ particleCount: 160, spread: 70 });
     } catch (err) {
       setError((err as Error).message);
     } finally {
@@ -132,7 +129,6 @@ function QuickCreateModal({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-xl overflow-hidden border border-border/60 bg-card/95 p-0 shadow-2xl sm:rounded-2xl">
-        <Confetti ref={confettiRef} className="absolute inset-0 pointer-events-none" manualstart />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-secondary/15 via-secondary/5 to-transparent opacity-80" />
         <div className="relative space-y-5 p-6">
           <DialogHeader className="space-y-2 flex justify-center items-center">

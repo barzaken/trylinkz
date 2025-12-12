@@ -6,7 +6,6 @@ import { fetchLinkByShortId, type LinkRecord } from "@/lib/links";
 
 export default function ShortRedirectPage() {
   const params = useParams();
-  console.log("params", params);
   const shortId = typeof params?.shortId === "string" ? params.shortId : "";
   const [status, setStatus] = useState<"loading" | "not-found" | "ready">("loading");
   const [error, setError] = useState<string | null>(null);

@@ -1,9 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
-import { DottedGlowBackground } from "./dotted-glow-background";
-import { useEffect, useState } from "react";
 import { DotPattern } from "../ui/dot-pattern"
-import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 export const Container = ({ headerContentDot = false, headerTitleDot = false, contentDot = false, isDotSeperator = false, headerContent, splitHeader = true, gId, id, children, title = "", description = "", HeaderIcon, seperatorContent }: { headerContentDot?: boolean, headerTitleDot?: boolean, contentDot?: boolean, isDotSeperator?: boolean, headerContent?: React.ReactNode, splitHeader?: boolean, gId?: string, id?: string, children: React.ReactNode, title?: string, description?: string, HeaderIcon?: React.ReactNode, seperatorContent?: React.ReactNode }) => {
     const { theme } = useTheme();

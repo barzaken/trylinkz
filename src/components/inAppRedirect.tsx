@@ -8,7 +8,7 @@ export default function InAppRedirect() {
     const isFB = ua.includes("fbav") || ua.includes("fban") || ua.includes("facebook");
     if (isIG || isFB) {
       const url = window.location.href;
-      if (window.location.host.includes("trylinkz.vercel.app/www")) {
+      if (url.startsWith("https://trylinkz.vercel.app/www")) {
         const path = window.location.pathname.slice(1)
         // ANDROID – פתיחה בכרום מחוץ ל-InAppBrowser
         if (ua.includes("android")) {

@@ -187,7 +187,7 @@ export default function AuthPage() {
                       required
                       value={email}
                       onChange={(event) => setEmail(event.target.value)}
-                      className="w-full rounded-lg border border-border/80 bg-background/80 px-4 py-3 text-sm shadow-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/40"
+                      className="w-full rounded-lg border border-border/80 bg-background/80 px-4 py-3 text-[16px] shadow-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/40"
                       placeholder="you@example.com"
                       autoComplete="email"
                     />
@@ -203,7 +203,7 @@ export default function AuthPage() {
                       required
                       value={password}
                       onChange={(event) => setPassword(event.target.value)}
-                      className="w-full rounded-lg border border-border/80 bg-background/80 px-4 py-3 text-sm shadow-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/40"
+                      className="w-full rounded-lg border border-border/80 bg-background/80 px-4 py-3 text-[16px] shadow-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/40"
                       placeholder="••••••••"
                       autoComplete={mode === "login" ? "current-password" : "new-password"}
                     />
@@ -223,7 +223,7 @@ export default function AuthPage() {
                         required
                         value={confirmPassword}
                         onChange={(event) => setConfirmPassword(event.target.value)}
-                        className="w-full rounded-lg border border-border/80 bg-background/80 px-4 py-3 text-sm shadow-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/40"
+                        className="w-full rounded-lg border border-border/80 bg-background/80 px-4 py-3 text-[16px] shadow-sm outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/40"
                         placeholder="••••••••"
                         autoComplete="new-password"
                       />

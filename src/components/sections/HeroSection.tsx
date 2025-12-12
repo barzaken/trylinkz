@@ -7,6 +7,7 @@ import { Logo } from "../ui/logo";
 import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 import { DotPattern } from "../ui/dot-pattern";
+import Image from "next/image";
 export function HeroSection() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
@@ -46,7 +47,7 @@ export function HeroSection() {
       <div className="absolute inset-x-0 bottom-0 h-px w-full bg-neutral-200/80 dark:bg-neutral-800/80">
         <div className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-teal-500 to-transparent" />
       </div>
-      <div className="flex flex-col items-center gap-4 sm:flex-row h-full px-4">
+      <div className="flex flex-col items-center gap-4 sm:flex-row h-full px-4 overflow-hidden">
         <div className="content flex-1">
           <h1 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
             {"הלינקים שלכם יכולים"
@@ -61,7 +62,7 @@ export function HeroSection() {
                     delay: index * 0.1,
                     ease: "easeInOut",
                   }}
-                  className="mr-2 inline-block"
+                  className="inline-block"
                 >
                   {word}
                 </motion.span>
@@ -188,7 +189,14 @@ export function HeroSection() {
           className="h-full relative z-10 mt20 rounded-3xl bordr border-neutral-200 bgneutral-100 p-4 shadowmd dark:borderneutral-800 dark:bgneutral-900 sm:max-w-1/3"
         >
           <div className="w-full h-full overflow-hidden rounded-xl bordr border-gray-300 dark:bordergray-700">
-            <video
+            <Image
+              src="/trylinkzdemo.gif" // Path to your GIF in the /public folder
+              alt="A description of the gif"
+              width={500} // Set appropriate width
+              height={300} // Set appropriate height
+              unoptimized={true} // Essential for the GIF to play
+            />
+            {/* <video
               ref={videoRef}
               className="aspect-[16/9]  h-full w-full object-contain sm:object-cover"
               autoPlay
@@ -201,7 +209,7 @@ export function HeroSection() {
               <source src="/demo.mp4" type="video/mp4" />
               <source src="/your-video.webm" type="video/webm" />
               Your browser does not support the video tag.
-            </video>
+            </video> */}
           </div>
         </motion.div>
       </div>

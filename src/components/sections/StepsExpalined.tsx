@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Container } from "../ui/container";
 
@@ -56,7 +56,7 @@ export function StepsExpalined() {
       <div id="steps-explained"
         className="relative  flex w-full flex-col gap-4">
         <div className="relative w-full overflow-hidden rounded-2xl aspect-[5/3] border border-neutral-200/80 bg-neutral-50 shadow-inner dark:border-neutral-800 dark:bg-neutral-900"> 
-        <video
+        {/* <video
         key={activeStep.video}
               ref={videoRef}
               className="aspect-[16/9] h-full w-full object-cover"
@@ -69,7 +69,24 @@ export function StepsExpalined() {
               <source src={activeStep.video} type="video/mp4" />
               <source src="/your-video.webm" type="video/webm" />
               Your browser does not support the video tag.
-            </video>
+            </video> */}
+      <AnimatePresence mode="wait">
+        <motion.video
+          key={activeStep.video}
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          initial={{ x: 80, opacity: 0 }}       // כניסה עדינה מימין
+          animate={{ x: 0, opacity: 1 }}        // מתמקם במרכז
+          exit={{ x: -80, opacity: 0 }}         // יציאה שמאלה
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+        >
+          <source src={activeStep.video} type="video/mp4" />
+        </motion.video>
+      </AnimatePresence>
         </div>
       </div>
       <div className="flex flex-col gap-4">

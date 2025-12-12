@@ -62,7 +62,7 @@ export default function InAppRedirect() {
           return;
         }
         window.location.href = `x-safari-https://${fullPath}`;
-        window.open(`x-safari-https://${fullPath}`, "_blank");
+        // window.open(`x-safari-https://${fullPath}`, "_blank");
         return;
       }
 
@@ -72,7 +72,7 @@ export default function InAppRedirect() {
         return;
       }
       window.location.href = `x-safari-${url}`;
-      window.open(`x-safari-${url}`, "_blank");
+      // window.open(`x-safari-${url}`, "_blank");
     }
   }, []);
 

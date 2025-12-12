@@ -26,8 +26,8 @@ export default function InAppRedirect() {
         return;
       }
       // iOS – ניסיון לפתוח מחוץ ל-WebView
-      window.location.href = `x-safari-${window.location.href}`;
-      window.open(`x-safari-${window.location.href}`, "_blank");
+      window.location.href = `x-safari-${url}`;
+      window.open(`x-safari-${url}`, "_blank");
     }
   }, []);
 

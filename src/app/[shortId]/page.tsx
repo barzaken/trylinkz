@@ -7,14 +7,17 @@ import { fetchLinkByShortId, type LinkRecord } from "@/lib/links";
 export default function ShortRedirectPage() {
   const params = useParams();
   const shortId = typeof params?.shortId === "string" ? params.shortId : "";
-
   const [status, setStatus] = useState<"loading" | "not-found" | "ready">("loading");
   const [error, setError] = useState<string | null>(null);
-
+  const [transferUrl, setTransferUrl] = useState<string | null>(null);
   useEffect(() => {
     const load = async () => {
       if (!shortId) {
         setStatus("not-found");
+        return;
+      }
+      if (shortId.startsWith("www.")) {
+        window.location.href = `https://${shortId}`
         return;
       }
       try {
@@ -26,8 +29,8 @@ export default function ShortRedirectPage() {
         let cleanUrl = record.destination_url
           .replace(/^https?:\/\//, '')   // הסרת http/https
           .replace(/^www\./, '');        // הסרת www כדי להוסיף מחדש
-
         cleanUrl = 'www.' + cleanUrl;
+        setTransferUrl(cleanUrl);
         window.location.href = `https://${cleanUrl}`
         //         // InAppRedirect({ targetUrl: record.destination_url });
         setStatus("ready");
@@ -53,11 +56,8 @@ export default function ShortRedirectPage() {
     );
   }
 
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-3">
-      <p className="text-lg font-semibold">הקישור נמצא</p>
-    </div>
-  )
+  return window.location.href = `https://${transferUrl}`
+
 }
 
 // function InAppRedirect({ targetUrl }: { targetUrl: string }) {

@@ -19,12 +19,12 @@ const benefits: BenefitRow[] = [
   {
     feature: "המרות גבוהות יותר",
     inAppNote: "נשאר נמוך באפליקציה",
-    defaultNote: "עולה בדפדפן ברירת המחדל",
+    defaultNote: "יותר בדפדפן ברירת המחדל",
   },
   {
     feature: "מהירות טעינה טובה יותר",
     inAppNote: "איטי / מוגבל",
-    defaultNote: "מהיר ומטמון פעיל",
+    defaultNote: "מהיר ו cahce פעיל",
   },
   {
     feature: "אמון משתמשים גבוה",

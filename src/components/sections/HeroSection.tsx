@@ -190,7 +190,7 @@ export function HeroSection() {
           <div className="w-full h-full overflow-hidden rounded-xl bordr border-gray-300 dark:bordergray-700">
             <video
               ref={videoRef}
-              className="aspect-[16/9] h-full w-full object-cover"
+              className="aspect-[16/9]  h-full w-full object-contain sm:object-cover"
               autoPlay
               muted
               loop

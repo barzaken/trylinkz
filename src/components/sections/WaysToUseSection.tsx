@@ -4,8 +4,12 @@ import { Container } from "../ui/container";
 import { motion } from "framer-motion";
 import { ContainerTextFlip } from "../ui/container-text-flip";
 import { Button } from "../ui/button";
+import { useState } from "react";
+import { toast } from "sonner";
+
 
 export function WaysToUseSection() {
+
   return (
     <Container gId="03" splitHeader={false} title="איך זה עובד?" description="3 דרכים להשתמש ב Linkz" >
       <div id="ways-to-use" className="col-span-2 mx-auto grid w-full grid-cols-1 gap-4  sm:grid-cols-3 px-6 lg:px-0 ">
@@ -61,7 +65,7 @@ export function WaysToUseSection() {
               size={"sm"}
               className="w-fit"
               onClick={() => {
-                alert("קוד הועתק ");
+                toast.success("קוד הועתק");
                 navigator.clipboard.writeText(`<script src="https://trylinkz.io/magic.js"></script>`);
               }}>העתק קוד</Button>
           </div>
@@ -87,20 +91,5 @@ export function WaysToUseSection() {
         </div>
       </div>
     </Container>
-  );
-}
-
-
-
-function ContainerTextFlipDemo() {
-  return (
-    <div className=" flex items-center justify-center">
-
-      {/* // <ContainerTextFlip */}
-      {/* // className="max-h-10 flex items-center justify-center overflow-hidden" */}
-      {/* //   textClassName="text-[24px]" */}
-      {/* //   words={["better", "modern", "Tyler Durden", "awesome"]} */}
-      {/* // /> */}
-    </div>
   );
 }

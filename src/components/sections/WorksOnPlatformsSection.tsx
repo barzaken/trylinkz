@@ -5,6 +5,7 @@ import { BorderBeam } from "../ui/border-beam"
 import { Container } from "../ui/container"
 // import { EncryptedText } from "../ui/encrypted-text"
 // import { DotPattern } from "../ui/dot-pattern"
+import { useRouter } from "next/navigation"
 const slugs = [
     // Core Web & Frontend
     "angular",
@@ -50,12 +51,13 @@ const slugs = [
 
 
 export function WorksOnPlatformsSection() {
+    const router = useRouter()
     const images = slugs.map(
         (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
     )
 
     return (
-        <Container id="05"
+        <Container gId="05"
             // isDotSeperator={true}
             title="Linkz them all"
             headerContent={
@@ -72,14 +74,15 @@ export function WorksOnPlatformsSection() {
             description="Linkz עובד על כל סוגי האתרים, הפלטפורמות והמכשירים" >
             <>
                 {/* Text Side */}
-                <div className="col-span-1 flex flex-col gap-2  text-right">
-                    <h1 className="text-2xl font-bold mb-2">ביצועים ועמידות ברמה של קמפיינים גדולים</h1>
+                <div id="works-on-platforms" className="col-span-1 flex flex-col gap-2  text-right">
+                    <h1 className="text-2xl font-bold mb-2">עובד על כל הפלטפורמות והמכשירים</h1>
+                    <p className="text-sm text-gray-500">ללא הגדרות נוספות או שינויים באתר או בקמפיין.</p>
                     <p className="text-sm text-gray-500">Linkz מעביר את המשתמשים לדפדפן ברירת המחדל שלהם, שומר על פיקסלים ו-UTM, ומספק חוויית תשלום מוכרת.</p>
-                    <p className="text-sm text-gray-500">עובד על אוטומט עם כל הכלים של הצוות – Meta, Google, Shopify ועוד – בלי לגעת במבנה הקמפיין.</p>
                     <p className="text-sm text-gray-500">חינמי לחלוטין, כדי שתוכלו לבדוק ולראות את הקפיצה בהמרות בלי סיכון.</p>
                     <div className="pt-12 flex gap-4">
-                        <Button variant={"outline"}> איך זה עובד</Button>
-                        <Button variant={"secondary"}>התחילו בחינם</Button>
+                        <Button variant={"secondary"} onClick={() => {
+                            router.push("/auth")
+                        }}>התחילו בחינם</Button>
                     </div>
                 </div>
 

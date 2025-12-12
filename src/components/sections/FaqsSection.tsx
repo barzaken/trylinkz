@@ -37,7 +37,7 @@ const faqs = [
     id: "faq-5",
     question: "כמה זמן לוקח להטמיע?",
     answer:
-      "פחות מ-5 דקות. מדביקים סקריפט או מייצרים לינק, ומיד שולחים תנועה לדפדפן ברירת המחדל.",
+      "פחות מדקה. מדביקים סקריפט או מייצרים לינק, ומיד שולחים תנועה לדפדפן ברירת המחדל.",
   },
   {
     id: "faq-6",
@@ -50,7 +50,7 @@ const faqs = [
 export function FaqsSection() {
   return (
     <Container
-      id="07"
+      gId="07"
       splitHeader={false}
       contentDot
       title="שאלות נפוצות"
@@ -59,11 +59,10 @@ export function FaqsSection() {
       <div className="col-span-2 grid gap-8 md:grid-cols-2">
         <div className="space-y-3">
           <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-50">
-            תשובות מהירות לפני שאתם מתחילים
+            אם עדיין נשארו לכם שאלות
           </h2>
           <p className="text-sm text-neutral-600 dark:text-neutral-300">
-            Linkz חינמי ומוכן לעבוד בשבילכם מהיום. המרות, תאימות ואנליטיקס
-            נשארים בשליטה מלאה.
+            לנו נשארו הסברים
           </p>
         </div>
 

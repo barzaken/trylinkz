@@ -33,11 +33,11 @@ const data = {
       url: "/app",
       icon: IconDashboard,
     },
-    {
-      title: "אנליטיקה",
-      url: "/app/analytics",
-      icon: IconChartBar,
-    },
+    // {
+    //   title: "אנליטיקה",
+    //   url: "/app/analytics",
+    //   icon: IconChartBar,
+    // },
     {
       title: "קישורים",
       url: "/app/links",
@@ -50,11 +50,11 @@ const data = {
       url: "/app/settings",
       icon: IconSettings,
     },
-    {
-      title: "קבל עזרה",
-      url: "/app/help",
-      icon: IconHelp,
-    }
+    // {
+    //   title: "קבל עזרה",
+    //   url: "/app/help",
+    //   icon: IconHelp,
+    // }
   ]
 }
 

@@ -85,10 +85,9 @@ const Pill = ({
 export function CompareSection() {
   return (
     <Container
-      id="04"
+      gId="04"
       title="מה, זה כזה משנה?"
       description="הסיבה שאנחנו מחזירים משתמשים לדפדפן ברירת המחדל."
-      HeaderIcon={<IconBolt className="size-5 text-secondary" />}
       headerContent={
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <IconShieldCheck className="size-4 text-secondary" />

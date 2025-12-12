@@ -34,16 +34,17 @@ Circle.displayName = "Circle";
 
 export function BenefitsSection() {
   return (
-    <Container id="02"
+    <Container gId="02"
       headerContent={<TypewriterEffectDemo />}
       contentDot={true}
       headerContentDot
+      id="benefits"
       title="למה זה טוב?"
-      description="שומרים על פיקסלים ו-UTM גם כשעוברים לדפדפן הנייטיב">
-
+      description="משתמשים גולשים ורוכשים יותר בדפדפן הטבעי שלהם">
       <>
         {/* Section Header */}
         <motion.div
+              id="benefits"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -64,6 +65,8 @@ export function BenefitsSection() {
           </h2>
           <p className="dark:text-white/60 text-black/60 max-w-2xl mx-auto text-lg">
             Linkz משמר כל פרמטר, Cookie ופיקסל תוך כדי העברה לדפדפן ברירת המחדל – כדי שהדוחות והאופטימיזציה יישארו מדויקים.
+            <br></br>
+            גלישה בדפדפן נייטיב משפרת את איסוף הנתונים ומעלה את ההמרות.
           </p>
         </motion.div>
         <AnimatedBeamDia />
@@ -569,24 +572,24 @@ const Icons = {
 function TypewriterEffectDemo() {
   const words = [
     {
-      text: "יותר",
+      text: "ואנחנו",
     },
     {
-      text: "המרות,",
+      text: "מעבירים,",
     },
     {
-      text: "פחות",
+      text: "אותם",
     },
     {
-      text: "חיכוך.",
+      text: "לשם.",
     },
     {
-      text: "חינם.",
+      text: "פשוט.",
       className: "text-teal-500 dark:text-teal-500",
     },
   ];
   return (
-    <div className="flex flex-col items-center justify-center h-full ">
+    <div className="flex flex-col items-center justify-center h-full w-full ">
       <TypewriterEffect cursorClassName="bg-teal-500" className="text-sm" words={words} />
     </div>
   );

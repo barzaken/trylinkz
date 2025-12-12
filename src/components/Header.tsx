@@ -9,7 +9,7 @@ import { Logo } from "./ui/logo";
 import { Moon, Sun } from "lucide-react";
 import { usePathname } from "next/navigation";
 const navItems = [
-  { label: "בית", href: "#hero" },
+  { label: "בית", href: "#steps" },
   { label: "שירותים", href: "#services" },
   { label: "אודות", href: "#about" },
   { label: "צור קשר", href: "#contact" },

@@ -133,12 +133,17 @@ export function HeroSection() {
             }}
             className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
           >
-            <button className="w-60 transform rounded-lg bg-black px-6 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200">
+            <Button variant="default" className="w-60">
               התחילו בחינם
-            </button>
-            <button className="w-60 transform rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:text-white dark:hover:bg-gray-900">
-              דברו עם מומחה
-            </button>
+            </Button>
+            <Button variant="outline" className="w-60" onClick={() => {
+              const stepsExplained = document.getElementById("steps-explained")
+              if (stepsExplained) {
+                stepsExplained.scrollIntoView({ behavior: "smooth" })
+              }
+            }}>
+              איך זה עובד?
+            </Button>
           </motion.div>
         </div>
         {/* <motion.div
@@ -183,9 +188,9 @@ export function HeroSection() {
           className="h-full relative z-10 mt20 rounded-3xl bordr border-neutral-200 bgneutral-100 p-4 shadowmd dark:borderneutral-800 dark:bgneutral-900 sm:max-w-1/3"
         >
           <div className="w-full h-full overflow-hidden rounded-xl bordr border-gray-300 dark:bordergray-700">
-            {/* <video
+            <video
               ref={videoRef}
-              className="aspect-[16/9] h-full w-full object-contain"
+              className="aspect-[16/9] h-full w-full object-cover"
               autoPlay
               muted
               loop
@@ -193,10 +198,10 @@ export function HeroSection() {
               preload="auto"
               onLoadedData={() => setIsVideoLoaded(true)}
             >
-              <source src="/demo2.mp4" type="video/mp4" />
+              <source src="/demo.mp4" type="video/mp4" />
               <source src="/your-video.webm" type="video/webm" />
               Your browser does not support the video tag.
-            </video> */}
+            </video>
           </div>
         </motion.div>
       </div>

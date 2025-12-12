@@ -5,17 +5,17 @@ import { useEffect, useState } from "react";
 import { DotPattern } from "../ui/dot-pattern"
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-export const Container = ({ headerContentDot = false, headerTitleDot = false, contentDot = false, isDotSeperator = false, headerContent, splitHeader = true, id, children, title = "", description = "", HeaderIcon, seperatorContent }: { headerContentDot?: boolean, headerTitleDot?: boolean, contentDot?: boolean, isDotSeperator?: boolean, headerContent?: React.ReactNode, splitHeader?: boolean, id: string, children: React.ReactNode, title?: string, description?: string, HeaderIcon?: React.ReactNode, seperatorContent?: React.ReactNode }) => {
+export const Container = ({ headerContentDot = false, headerTitleDot = false, contentDot = false, isDotSeperator = false, headerContent, splitHeader = true, gId, id, children, title = "", description = "", HeaderIcon, seperatorContent }: { headerContentDot?: boolean, headerTitleDot?: boolean, contentDot?: boolean, isDotSeperator?: boolean, headerContent?: React.ReactNode, splitHeader?: boolean, gId?: string, id?: string, children: React.ReactNode, title?: string, description?: string, HeaderIcon?: React.ReactNode, seperatorContent?: React.ReactNode }) => {
     const { theme } = useTheme();
     const isDark = theme === "dark";
     return (
         <>
-            <div className="w-full h-full border-y-1 px-9 lg:px-18 mt-0  overflow-hidden">
+            <div id={id} className="w-full h-full border-y-1 px-9 lg:px-18 mt-0  overflow-hidden">
                 <div className="flex  w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 border-x-1">
                     <div className="flex-1 flex flex-col gap-1  p-4 relative">
                         <div className="flex gap-1 items-center">
                             {HeaderIcon}
-                            {id && <h3 className="text-xs font-semibold">[ 07 / <span className="text-secondary">{id}</span> ]</h3>}
+                            {gId && <h3 className="text-xs font-semibold">[ 07 / <span className="text-secondary">{gId}</span> ]</h3>}
                             {/* <h1 className="text-md font-bold text-right ">{title}</h1> */}
                             <h3 className="text-sm mr-2 font-bold">{title}</h3>
                         </div>
@@ -24,7 +24,7 @@ export const Container = ({ headerContentDot = false, headerTitleDot = false, co
                         </div>
                         {headerTitleDot && <DotPattern />}
                     </div>
-                    {splitHeader && <div className="flex-1 bordert md:border-t-0 flex flex-col gap-1  p-4 border-r-0  md:border-r-1 relative">
+                    {(splitHeader || headerContent) && <div className="flex-1 bordert md:border-t-0 flex flex-col gap-1  p-4 border-r-0  md:border-r-1 relative">
                         {headerContent}
                         {headerContentDot && <DotPattern />}
 
@@ -36,7 +36,7 @@ export const Container = ({ headerContentDot = false, headerTitleDot = false, co
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6}}
+                    transition={{ duration: 0.6 }}
                     className="relative flex p-4 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 border-x-1">
                     {children}
                     {contentDot && <DotPattern size="md" density={10} chars={['l', 'e', 'v', 'e', 'l', 'z']} />}

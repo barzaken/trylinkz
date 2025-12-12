@@ -7,9 +7,8 @@ import { Button } from "../ui/button";
 
 export function WaysToUseSection() {
   return (
-    <Container id="03" splitHeader={false} title="איך זה עובד?" description="3 שלבים פשוטים שמעלים המרות">
-
-      <div className="col-span-2 mx-auto grid w-full grid-cols-1 gap-4  sm:grid-cols-3 px-6 lg:px-0 ">
+    <Container gId="03" splitHeader={false} title="איך זה עובד?" description="3 דרכים להשתמש ב Linkz" >
+      <div id="ways-to-use" className="col-span-2 mx-auto grid w-full grid-cols-1 gap-4  sm:grid-cols-3 px-6 lg:px-0 ">
         <div className="rounded-md p-6 px-0 ">
           <div className="h-40 hover:opacity-100 transition-opacity duration-300 opacity-75 w-full rounded-lg overflow-hidden">
             <img src="https://media.istockphoto.com/id/1830163120/photo/group-of-computer-programmers-talking-while-working-at-it-office.jpg?s=612x612&w=0&k=20&c=nnhMhZcifOMTSPiZJ72QUDVWxcSgCyth-2GQaDTgzx0=" className="h-full w-full object-cover" />

@@ -107,10 +107,10 @@ export default function AuthPage() {
   return (
     <div className="mt-18">
       <Container
-      id="Auth"
+      gId="Auth"
         splitHeader={false}
         isDotSeperator={true}
-        title="כניסה לאיזור האישי"
+        title="התחברות למערכת"
         HeaderIcon={<IconLock className="size-5 text-secondary" />}
       >
         <div className="col-span-2">
@@ -120,25 +120,10 @@ export default function AuthPage() {
           <div className="col-span-2 flex gap-16">
             <div className="hidden sm:block flex-1 space-y-6 text-right lg:text-right">
               <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-                מתחברים בקלי קלות,<br /> ממשיכים לבנות עם Linkz
+                מתחברים בקלי קלות,<br /> יוצרים קישורים עם Linkz
               </h1>
               <p className="max-w-2xl text-lg text-foreground/70">
-                הזדהות פשוטה ונקייה שממשיכה את השפה העיצובית של האתר.
-                תוך כמה שניות תעברו לאפליקציה להמשך העבודה.
-              </p>
-              <div className="grid gap-4 md:grid-cols-3">
-                {featureHighlights.map((item) => (
-                  <div
-                    key={item.title}
-                    className="rounded-2xl relative border border-border/60 bg-card/60 p-4 backdrop-blur"
-                  >
-                    <p className="text-base font-semibold text-foreground">{item.title}</p>
-                    <p className="text-sm text-foreground/70">{item.description}</p>
-                    <BorderBeam
-                      className="from-transparent via-teal-400 to-transparent"
-                    />                  </div>
-                ))}
-              </div>
+התחברו וצרו קישורים קצרים, אלגנטים והכי חשוב - כאלו שחיים מחוץ לדפדפנים של האפליקציות.              </p>
             </div>
 
             <Card className="relative w-full sm:max-w-1/2 border border-border/70 bg-card/80 shadow-2xl backdrop-blur-xl">
@@ -251,7 +236,7 @@ export default function AuthPage() {
                     disabled={loading}
                   >
                     {loading
-                      ? "מבצע..."
+                      ? "מתחבר..."
                       : mode === "login"
                         ? "התחברות"
                         : "הרשמה"}

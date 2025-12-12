@@ -23,14 +23,13 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
-
   const isDark = theme === "dark";
   // const isDark = true;
-
+  
   const toggleTheme = () => {
     setTheme(isDark ? "light" : "dark");
   };
-
+  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -50,7 +49,7 @@ export function Header() {
         : "bg-transparent"
         }`}
     >
-      <div className="max-w-6xl mx-auto px-9 lg:px-0 py-0 ">
+      <div className="max-w-7xl mx-auto px-9 lg:px-0 py-0 ">
         <div className="flex items-center justify-between ">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
@@ -65,7 +64,7 @@ export function Header() {
               <div className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#088528] to-transparent" />
             </motion.div> */}
             {/* <Image src={isDark ? lvlzLogoWhite : lvlzLogo} alt="Levelz Logo" width={120} height={80} /> */}
-            <Logo width={100} height={80} />
+            <Logo width={100} height={100} />
           </Link>
 
           {/* Desktop Navigation */}

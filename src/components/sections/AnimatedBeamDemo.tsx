@@ -91,37 +91,39 @@ function AnimatedBeamDia() {
       <div className="flex size-full max-h-[200px] max-w-lg max-w-full flex-col items-stretch justify-between gap-10">
         <div className="flex flex-row items-center justify-between">
           <Circle ref={div1Ref}>
-            <img src={Icons.instagram} alt="Instagram" width={50} height={50} />
+            <img src={Icons.chrome} alt="chrome" width={50} height={50} />
           </Circle>
           <Circle ref={div5Ref}>
-            <img src={Icons.chrome} alt="Facebook" width={50} height={50} />
+            <img src={Icons.instagram} alt="Instagram" width={50} height={50} />
           </Circle>
         </div>
         <div className="flex flex-row items-center justify-between">
           <Circle ref={div2Ref}>
-            <img src={Icons.facebook} alt="facebook" width={50} height={50} />
+            <img src={Icons.safari} alt="safari" width={50} height={50} />
           </Circle>
           <Circle ref={div4Ref} className="size-16">
             {/* <Icons.openai /> */}
             <Logo width={50} height={50} />
           </Circle>
           <Circle ref={div6Ref}>
-            <img src={Icons.safari} alt="safari" width={50} height={50} />
+            <img src={Icons.facebook} alt="facebook" width={50} height={50} />
           </Circle>
         </div>
         <div className="flex flex-row items-center justify-between">
           <Circle ref={div3Ref}>
-            <img src={Icons.tiktok} alt="TikTok" width={50} height={50} />
+            <img src={Icons.firefox} alt="LinkedIn" width={50} height={50} />
+
           </Circle>
           <Circle ref={div7Ref}>
-            <img src={Icons.firefox} alt="LinkedIn" width={50} height={50} />
+            <img src={Icons.tiktok} alt="TikTok" width={50} height={50} />
+
           </Circle>
         </div>
       </div>
 
       <AnimatedBeam
-            gradientStartColor="#38b2ac"
-      gradientStopColor="#38b2ac"
+        gradientStartColor="#38b2ac"
+        gradientStopColor="#38b2ac"
         containerRef={containerRef}
         fromRef={div1Ref}
         toRef={div4Ref}
@@ -129,15 +131,15 @@ function AnimatedBeamDia() {
         endYOffset={-10}
       />
       <AnimatedBeam
-            gradientStartColor="#38b2ac"
-      gradientStopColor="#38b2ac"
+        gradientStartColor="#38b2ac"
+        gradientStopColor="#38b2ac"
         containerRef={containerRef}
         fromRef={div2Ref}
         toRef={div4Ref}
       />
       <AnimatedBeam
-            gradientStartColor="#38b2ac"
-      gradientStopColor="#38b2ac"
+        gradientStartColor="#38b2ac"
+        gradientStopColor="#38b2ac"
         containerRef={containerRef}
         fromRef={div3Ref}
         toRef={div4Ref}
@@ -145,32 +147,32 @@ function AnimatedBeamDia() {
         endYOffset={10}
       />
       <AnimatedBeam
-            gradientStartColor="#38b2ac"
-      gradientStopColor="#38b2ac"
+        gradientStartColor="#38b2ac"
+        gradientStopColor="#38b2ac"
         containerRef={containerRef}
         fromRef={div5Ref}
         toRef={div4Ref}
         curvature={-75}
         endYOffset={-10}
-        reverse
+        // reverse
       />
       <AnimatedBeam
-            gradientStartColor="#38b2ac"
-      gradientStopColor="#38b2ac"
+        gradientStartColor="#38b2ac"
+        gradientStopColor="#38b2ac"
         containerRef={containerRef}
         fromRef={div6Ref}
         toRef={div4Ref}
-        reverse
+        // reverse
       />
       <AnimatedBeam
-      gradientStartColor="#38b2ac"
-      gradientStopColor="#38b2ac"
+        gradientStartColor="#38b2ac"
+        gradientStopColor="#38b2ac"
         containerRef={containerRef}
         fromRef={div7Ref}
         toRef={div4Ref}
         curvature={75}
         endYOffset={10}
-        reverse
+        // reverse
       />
     </div>
   )

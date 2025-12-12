@@ -29,21 +29,21 @@ export function Footer() {
       {/* Grid Pattern */}
       <div className="absolute inset-0 opacity-30" />
       
-      <div className="relative max-w-6xl mx-auto px-9 lg:px-0 py-16">
+      <div className="relative max-w-7xl mx-auto px-9 lg:px-0 py-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="col-span-2">
-            <Link href="/" className="inline-block mb-6">
+            <Link href="/" className="inline-block">
               {/* <span className="text-4xl font-black tracking-tighter">
                 <span className="text-black dark:text-white">LEVEL</span>
                 <span className="text-[#088528]">Z</span>
               </span> */}
-              <Logo width={120} height={80} />
+              <Logo width={100} height={100} />
             </Link>
             <p className="text-black/60 dark:text-white/60 leading-relaxed max-w-md">
               Linkz פותח כל קליק בדפדפן ברירת המחדל ומאיץ את האתר, כך שתראו עוד 30-40% תוצאות. הכל בחינם וללא שינוי במבנה הקמפיינים שלכם.
             </p>
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-4 mt-4">
               <motion.a
                 href="https://linkedin.com"
                 target="_blank"
@@ -114,7 +114,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-4 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-black/40 dark:text-white/40 text-sm">
             © {new Date().getFullYear()} Linkz. כל הזכויות שמורות.
           </p>

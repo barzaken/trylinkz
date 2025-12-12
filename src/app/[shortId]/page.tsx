@@ -23,8 +23,13 @@ export default function ShortRedirectPage() {
           setStatus("not-found");
           return;
         }
+        let cleanUrl = record.destination_url
+          .replace(/^https?:\/\//, '')   // הסרת http/https
+          .replace(/^www\./, '');        // הסרת www כדי להוסיף מחדש
+
+        cleanUrl = 'www.' + cleanUrl;
         window.location.href = `https://${cleanUrl}`
-        // InAppRedirect({ targetUrl: record.destination_url });
+        //         // InAppRedirect({ targetUrl: record.destination_url });
         setStatus("ready");
       } catch (err) {
         setError((err as Error).message);

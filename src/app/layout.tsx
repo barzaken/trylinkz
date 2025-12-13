@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import InAppRedirect from "@/components/inAppRedirect";
 import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "@/components/ui/sonner";
+import { CookieConsent } from "@/components/CookieConsent";
 const heebo = Heebo({
   variable: "--font-heebo",
   subsets: ["hebrew", "latin"],
@@ -54,6 +55,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <InAppRedirect />
+          <CookieConsent />
           <Header />
           <main className="overflow-hidden ">
             {children}

@@ -68,9 +68,9 @@ export default function PrivacyPage() {
             לשאלות בנוגע למדיניות זו ניתן לפנות ל-
             <Link
               className="text-secondary underline underline-offset-2"
-              href="mailto:privacy@trylinkz.io"
+              href="mailto:privacy@deeplinkz.io"
             >
-              privacy@trylinkz.io
+              privacy@deeplinkz.io
             </Link>
             .
           </p>

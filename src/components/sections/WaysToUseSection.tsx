@@ -24,7 +24,7 @@ export function WaysToUseSection() {
         <div className="rounded-md p-6 px-0 ">
           <div className="h-52 relative lg:h-40 w-full rounded-lg overflow-hidden">
             <div style={{direction: "ltr"}} className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-              <h2 className="text-xl sm:text-2xl text-white font-bold">trylinkz.io<span className="text-secondary">/</span></h2>
+              <h2 className="text-xl sm:text-2xl text-white font-bold">deeplinkz.io<span className="text-secondary">/</span></h2>
           <TypingAnimation
           words={["www.google.com", "www.aliexpres.com", "www.amazon.com","www.youtube.com"]}
           blinkCursor={true}
@@ -46,7 +46,7 @@ export function WaysToUseSection() {
               pointerClassName="text-teal-500 h-3 w-3"
               containerClassName="inline-block mr-0"
             >
-              <span className="relative z-10 px-1">trylinkz.io/</span>
+              <span className="relative z-10 px-1">deeplinkz.io/</span>
             </PointerHighlight>
             &nbsp;
           </div>
@@ -55,7 +55,7 @@ export function WaysToUseSection() {
             <br></br>
           </p>
             <code className="relative py-2 px-2 bg-gray-100 text-sm dark:bg-gray-800  rounded">
-              {`trylinkz.io/www.google.com`}
+              {`deeplinkz.io/www.google.com`}
               <BorderBeam
                 duration={6}
                 delay={3}
@@ -94,7 +94,7 @@ export function WaysToUseSection() {
               className="w-fit"
               onClick={() => {
                 toast.success("קוד הועתק");
-                navigator.clipboard.writeText(`<script src="https://trylinkz.io/magic.js"></script>`);
+                navigator.clipboard.writeText(`<script src="https://deeplinkz.io/magic.js"></script>`);
               }}>העתק קוד</Button>
           </div>
         </div>

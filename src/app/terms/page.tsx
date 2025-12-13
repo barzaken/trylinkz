@@ -67,9 +67,9 @@ export default function TermsPage() {
             לשאלות בנוגע לתנאים ניתן לפנות ל-
             <Link
               className="text-secondary underline underline-offset-2"
-              href="mailto:contact@trylinkz.io"
+              href="mailto:contact@deeplinkz.io"
             >
-              contact@trylinkz.io
+              contact@deeplinkz.io
             </Link>
             .
           </p>

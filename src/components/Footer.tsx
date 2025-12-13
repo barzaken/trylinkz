@@ -41,7 +41,7 @@ export function Footer() {
             </p>
             <div className="flex gap-4 mt-4">
               <motion.a
-                href="https://instagram.com/trylinkz.io"
+                href="https://instagram.com/deeplinkz.io"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}

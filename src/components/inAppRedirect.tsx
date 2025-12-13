@@ -53,8 +53,13 @@ export default function InAppRedirect() {
   useEffect(() => {
     const ua = navigator.userAgent.toLowerCase();
     const isInApp = getAppKey(ua);
+
+    // this forces youtube to open in the app!
+    // const url = window.location.href;
+    // window.location.href = `youtube://watch?v=rWJL3H6-fg`;
+    // this forces aliexeprss to open in the app!
     const url = window.location.href;
-    window.location.href = `youtube://watch?v=rWJL3H6-fg`;
+    window.location.href = `aliexpress://product?productId=1005010477697644`;
 
     // if (isInApp) {
     //   const url = window.location.href;

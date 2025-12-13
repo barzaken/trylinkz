@@ -53,27 +53,30 @@ export default function InAppRedirect() {
   useEffect(() => {
     const ua = navigator.userAgent.toLowerCase();
     const isInApp = getAppKey(ua);
-    if (isInApp) {
-      const url = window.location.href;
-      if (url.startsWith("https://trylinkz.io/www")) {
-        const fullPath = window.location.pathname.slice(1) + window.location.search + window.location.hash;
-        if (ua.includes("android")) {
-          window.location.href = `intent://${fullPath}#Intent;scheme=https;package=com.android.chrome;end`;
-          return;
-        }
-        window.location.href = `x-safari-https://${fullPath}`;
-        window.open(`x-safari-https://${fullPath}`, "_blank");
-        return;
-      }
+    const url = window.location.href;
+    window.location.href = `youtube://watch?v=rWJL3H6-fg`;
 
-      const fullPath = location.host + location.pathname + location.search + location.hash;
-      if (ua.includes("android")) {
-        window.location.href = `intent://${fullPath}#Intent;scheme=https;package=com.android.chrome;end`;
-        return;
-      }
-      window.location.href = `x-safari-${url}`;
-      window.open(`x-safari-${url}`, "_blank");
-    }
+    // if (isInApp) {
+    //   const url = window.location.href;
+    //   if (url.startsWith("https://trylinkz.io/www")) {
+    //     const fullPath = window.location.pathname.slice(1) + window.location.search + window.location.hash;
+    //     if (ua.includes("android")) {
+    //       window.location.href = `intent://${fullPath}#Intent;scheme=https;package=com.android.chrome;end`;
+    //       return;
+    //     }
+    //     window.location.href = `x-safari-https://${fullPath}`;
+    //     window.open(`x-safari-https://${fullPath}`, "_blank");
+    //     return;
+    //   }
+
+    //   const fullPath = location.host + location.pathname + location.search + location.hash;
+    //   if (ua.includes("android")) {
+    //     window.location.href = `intent://${fullPath}#Intent;scheme=https;package=com.android.chrome;end`;
+    //     return;
+    //   }
+    //   window.location.href = `x-safari-${url}`;
+    //   window.open(`x-safari-${url}`, "_blank");
+    // }
   }, []);
 
   return null;

@@ -24,13 +24,13 @@ export function WaysToUseSection() {
         <div className="rounded-md p-6 px-0 ">
           <div className="h-52 relative lg:h-40 w-full rounded-lg overflow-hidden">
             <div style={{direction: "ltr"}} className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-              <h2 className="text-xl sm:text-2xl text-white font-bold">deeplinkz.io<span className="text-secondary">/</span></h2>
+              <h2 className="text-sm lg:text-lg text-white font-bold">deeplinkz.io<span className="text-secondary">/</span></h2>
           <TypingAnimation
           words={["www.google.com", "www.aliexpres.com", "www.amazon.com","www.youtube.com"]}
           blinkCursor={true}
           pauseDelay={2000}
           loop
-          className="text-xl sm:text-2xl text-white font-bold"
+          className="text-sm lg:text-lg text-white font-bold"
         >
           Blinking cursor
         </TypingAnimation>
